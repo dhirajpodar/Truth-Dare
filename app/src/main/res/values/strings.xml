@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Truth&amp;Dare</string>
+
+    <array name="truthList">
+        <item>"Have you ever been drunk?"</item>
+        <item>"Have you ever been beaten?"</item>
+        <item>"Have you ever peed in public?"</item>
+        <item>"Have you ever cried for food?"</item>
+        <item>"Have you ever failed in exam?"</item>
+    </array>
+
+    <array name="dareList">
+        <item>"Have you ever dare 1"</item>
+        <item>"Have you ever  dare 2"</item>
+        <item>"Have you ever  dare 3"</item>
+        <item>"Have you ever dare 4"</item>
+        <item>"Have you ever dare 5"</item>
+    </array>
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_cancel"
+            android:layout_margin="16dp">
+
+            <TextView
+                android:id="@+id/tv_truth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Truth"
+                android:textSize="17sp"
+                android:padding="16dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_dare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dare"
+                android:padding="16dp"
+                android:textSize="17sp"
+                android:layout_marginTop="32dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/iv_cancel"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_cancel_black_24dp"
+            android:layout_gravity="top|right"/>
+    </FrameLayout>
+
+
+</LinearLayout>
