@@ -13,6 +13,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -35,32 +38,20 @@ public class MainActivity extends AppCompatActivity {
     private TextView questionsCancel;
     private TextView optionsCancel;
     private TextView splashTextView;
+    private AdView adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        assignId();
+        startSplash();
+        initApp();
 
-        splashTextView = findViewById(R.id.tv_splash);
+        MobileAds.initialize(this,"ca-app-pub-5519005217801757~8970156166");
+    }
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                splashTextView.setVisibility(View.GONE);
-                ivBottle.setVisibility(View.VISIBLE);
-            }
-        },3000);
-
-        ivBottle = findViewById(R.id.iv_bottle);
-        rlOptions = findViewById(R.id.rl_options);
-        rlQuestions = findViewById(R.id.rl_questions);
-        rlMain = findViewById(R.id.rl_main);
-        btnTruth = findViewById(R.id.btn_truth);
-        btnDare = findViewById(R.id.btn_dare);
-        optionsCancel = findViewById(R.id.tv_option_cancel);
-        questionsCancel = findViewById(R.id.tv_question_cancel);
-        tvQuestions = findViewById(R.id.tv_display_questions);
-
+    private void initApp() {
         truthList = new ArrayList<>();
         dareList = new ArrayList<>();
         truthList = Arrays.asList(getResources().getStringArray(R.array.truthList));
@@ -72,6 +63,30 @@ public class MainActivity extends AppCompatActivity {
                 startRotation();
             }
         });
+    }
+
+    private void assignId() {
+        splashTextView = findViewById(R.id.tv_splash);
+        ivBottle = findViewById(R.id.iv_bottle);
+        rlOptions = findViewById(R.id.rl_options);
+        rlQuestions = findViewById(R.id.rl_questions);
+        rlMain = findViewById(R.id.rl_main);
+        btnTruth = findViewById(R.id.btn_truth);
+        btnDare = findViewById(R.id.btn_dare);
+        optionsCancel = findViewById(R.id.tv_option_cancel);
+        questionsCancel = findViewById(R.id.tv_question_cancel);
+        tvQuestions = findViewById(R.id.tv_display_questions);
+        adView = findViewById(R.id.adView);
+    }
+
+    private void startSplash() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                splashTextView.setVisibility(View.GONE);
+                ivBottle.setVisibility(View.VISIBLE);
+            }
+        },3000);
     }
 
     private void startRotation() {
