@@ -6,6 +6,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@drawable/floor">
+    <TextView
+        android:id="@+id/tv_splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Truth \n &amp; \nDare"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="60sp"
+        android:textColor="#fff"
+        android:fontFamily="cursive"
+        android:layout_centerInParent="true"/>
 
     <ImageView
         android:id="@+id/iv_bottle"
@@ -13,7 +24,7 @@
         android:layout_height="300dp"
         android:src="@drawable/bottle"
         android:layout_centerInParent="true"
-        android:visibility="visible" />
+        android:visibility="gone" />
 
     <RelativeLayout
         android:id="@+id/rl_options"

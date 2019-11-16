@@ -1,19 +1,77 @@
 <resources>
-    <string name="app_name">Truth&amp;Dare</string>
+  <string name="app_name">Truth&amp;Dare</string>
 
-    <array name="truthList">
-        <item>"Have you ever been drunk?"</item>
-        <item>"Have you ever been beaten?"</item>
-        <item>"Have you ever peed in public?"</item>
-        <item>"Have you ever cried for food?"</item>
-        <item>"Have you ever failed in exam?"</item>
-    </array>
+  <array name="truthList">
+    <item>"What was the last thing you searched for on your phone?"</item>
+    <item>"What's the first thing you would do if you woke up one day as the opposite sex?"</item>
+    <item>"Have you ever peed in the pool?"</item>
+    <item>"Who do you think is the worst dressed person in this room?"</item>
+    <item>"Have you ever farted in an elevator?"</item>
+    <item>"What are some things you think about when sitting on the toilet?"</item>
+    <item>"Have you ever practiced kissing in a mirror?"</item>
+    <item>"Have you ever peed yourself?"</item>
+    <item>"Have you ever tried to take a sexy picture of yourself?"</item>
+    <item>"Who is your secret crush?"</item>
+    <item>"Who do you like the least in this room, and why?"</item>
+    <item>"Who is the sexiest person in this room?"</item>
+    <item>"What color underwear are you wearing right now?"</item>
+    <item>"If you were rescuing people from a burning building and you had to leave one person behind from this room, who would it be?"</item>
+    <item>"Have you ever farted and then blamed someone else?"</item>
+    <item>"What is the most illegal thing you have ever done?"</item>
+    <item>"If you could only hear one song for the rest of your life, what would it be?"</item>
+    <item>"Who in this room would be the worst person to date? Why?"</item>
+    <item>"If someone offered you $1 million to break up with your girlfriend/boyfriend, would you do it?"</item>
+    <item>"Have you ever thought about cheating on your partner?"</item>
+    <item>"If you could suddenly become invisible, what would you do?"</item>
+    <item>"Have you ever cried because you missed your parents so much?"</item>
+    <item>"What is your biggest fear?"</item>
+    <item>"Do you pee in the shower?"</item>
+    <item>"Do you watch “adult movies”? If yes, what is your favorite category?"</item>
+    <item>"If you could kiss one celebrity, who would it be?"</item>
+    <item>"Where did you used to think babies come from?"</item>
+    <item>"Have you ever let someone take the blame for something you did? What happened?"</item>
+    <item>"What app on your phone do you waste the most time on?"</item>
+    <item>"Do you have any silly nicknames?If yes what is that?"</item>
+    <item>"How far would you go to land the guy or girl of your dreams?"</item>
+    <item>"The world ends next week, and you can do anything you want (even if it's illegal). What would you do?"</item>
+    <item>"Have you ever posted something on social media that you regret?"</item>
+    <item>"Have you ever waved at someone thinking they saw you when really they didn't? What did you do when you realized it?"</item>
+  </array>
 
-    <array name="dareList">
-        <item>"Have you ever dare 1"</item>
-        <item>"Have you ever  dare 2"</item>
-        <item>"Have you ever  dare 3"</item>
-        <item>"Have you ever dare 4"</item>
-        <item>"Have you ever dare 5"</item>
-    </array>
+  <array name="dareList">
+    <item>"Put an ice cube in your pocket until it melts."</item>
+    <item>"Go to the nearest fridge, pour a little bit of all the liquids found (not including medication) into a glass, stir it, and drink it all up."</item>
+    <item>"Make an unflattering picture of yourself your Facebook profile picture for at least a day."</item>
+    <item>"Let someone spoon-feed you with both of you blindfolded for 2 minutes. Make it something messy like yogurt, applesauce, etc."</item>
+    <item>"Turn off your phone for the rest of the game."</item>
+    <item>"Slap the person on the left."</item>
+    <item>"Hug the person on the right."</item>
+    <item>"Call your closest friend and invite him/her for a threesome."</item>
+    <item>"Do 50 sitTry to drink 3 glasses of milk/water in 1 minute. ups."</item>
+    <item>"Do a seductive dance in front of everyone."</item>
+    <item>"Call your best friend and make him/her believe that you are a gay."</item>
+    <item>"Show your whole browsing history to the players in the room."</item>
+    <item>"Take a coin out of your wallet and lick it."</item>
+    <item>" Go to your neighbors house and pretend to be Adele and sing “Hello” behind his/her door."</item>
+    <item>"Give a foot massage to the person on your left."</item>
+    <item>"Sit on someone’s lap for 5 minutes."</item>
+    <item>"Sing a song for 2 minutes, but meow instead of singing the words."</item>
+    <item>"Call someone on your phone and talk to them for 3 minutes without telling them that you are playing Truth or Dare."</item>
+    <item>"Go outside and sing Twinkle, Twinkle Little Star loudly."</item>
+    <item>"Do the moonwalk across the room."</item>
+    <item>"Give an insult to every person in the room."</item>
+    <item>"Prank call the number of someone that you do not know."</item>
+    <item>"Lay on the floor and pretend that you are swimming for two minutes."</item>
+    <item>"Say the alphabet backwards."</item>
+    <item>"Ask the neighbors next door for a cup of sugar. If they do not have sugar or do not answer, try until you get someone."</item>
+    <item>"Send someone a message that says, “I know what you did last summer."</item>
+    <item>"Perform a rap for everyone in the room."</item>
+    <item>" Carry the person next to you across the room."</item>
+    <item>"Say something very dirty to the person on your left."</item>
+    <item>"Put your toe in your mouth. If you cannot do that then you have to put someone else’s toe in your mouth."</item>
+    <item>"Use a pickup line on the person on your right."</item>
+    <item>"Smell the foot of the person on your left."</item>
+    <item>"Let someone in the room write whatever they want from your Facebook account."</item>
+    <item>"Let everyone in the room, dress you up, do your makeup, and your hair. Take a picture and make that your new social media profile picture for at least one day."</item>
+  </array>
 </resources>

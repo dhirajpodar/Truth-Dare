@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
@@ -33,11 +34,22 @@ public class MainActivity extends AppCompatActivity {
     private List<String> dareList;
     private TextView questionsCancel;
     private TextView optionsCancel;
+    private TextView splashTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        splashTextView = findViewById(R.id.tv_splash);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                splashTextView.setVisibility(View.GONE);
+                ivBottle.setVisibility(View.VISIBLE);
+            }
+        },3000);
 
         ivBottle = findViewById(R.id.iv_bottle);
         rlOptions = findViewById(R.id.rl_options);
