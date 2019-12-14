@@ -1,0 +1,8 @@
+
+žsquid:S1186–"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úƒÚÓûÿÿÿÿ
+—squid:UselessImportCheck"gRemove this unused import 'com.google.android.gms.ads.initialization.OnInitializationCompleteListener'.(åÒÉæÿÿÿÿÿ8°í×›ð-
+esquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(²Ú±Ž
+\squid:UselessImportCheck"3Remove this unused import 'android.graphics.Color'.(øãíòþÿÿÿÿ
+‹squid:UselessImportCheck"[Remove this unused import 'com.google.android.gms.ads.initialization.InitializationStatus'.(×ƒìÚúÿÿÿÿ8°í×›ð-
+Fsquid:S1068'"*Remove this unused "rlMain" private field.(¿á„„øÿÿÿÿ
+qsquid:S1450'"URemove the "rlMain" field and declare it as a local variable in the relevant methods.(¿á„„øÿÿÿÿ

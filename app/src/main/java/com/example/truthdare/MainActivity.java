@@ -2,9 +2,11 @@ package com.example.truthdare;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
@@ -13,8 +15,14 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView optionsCancel;
     private TextView splashTextView;
     private AdView adView;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +57,32 @@ public class MainActivity extends AppCompatActivity {
         startSplash();
         initApp();
 
-        MobileAds.initialize(this,"ca-app-pub-5519005217801757~8970156166");
+        MobileAds.initialize(this,"ca-app-pub-3940256099942544~3347511713");
+        loadBanner();
+        loadIntertitial();
+    }
+    private void loadIntertitial() {
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder()
+                .addTestDevice("020DEE8F058B3357CB94A23BCF82F8DF")
+                .build());
+        mInterstitialAd.setAdListener(new AdListener(){
+            @Override
+            public void onAdClosed() {
+                mInterstitialAd.loadAd(new AdRequest.Builder().build());
+            }
+        });
+
+    }
+
+    private void loadBanner() {
+        adView = new AdView(this);
+        adView.setAdSize(AdSize.BANNER);
+        adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        adView.loadAd(adRequest);
     }
 
     private void initApp() {
@@ -76,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         optionsCancel = findViewById(R.id.tv_option_cancel);
         questionsCancel = findViewById(R.id.tv_question_cancel);
         tvQuestions = findViewById(R.id.tv_display_questions);
-        adView = findViewById(R.id.adView);
+        adView = findViewById(R.id.adViewBanner);
     }
 
     private void startSplash() {
@@ -109,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onAnimationEnd(Animation animation) {
                     isSpinning=false;
                     showOptions();
-
+                    loadBanner();
 
                 }
 
@@ -131,6 +165,12 @@ public class MainActivity extends AppCompatActivity {
         optionsCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(mInterstitialAd.isLoaded()){
+                    mInterstitialAd.show();
+                }
+                else {
+                    Log.d("TAG","The intertitial was not loaded yet.");
+                }
                 rlOptions.setVisibility(View.GONE);
                 ivBottle.setEnabled(true);
             }
@@ -156,6 +196,12 @@ public class MainActivity extends AppCompatActivity {
         questionsCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(mInterstitialAd.isLoaded()){
+                    mInterstitialAd.show();
+                }
+                else {
+                    Log.d("TAG","The intertitial was not loaded yet.");
+                }
                 rlQuestions.setVisibility(View.GONE);
                 ivBottle.setVisibility(View.VISIBLE);
                 ivBottle.setEnabled(true);
