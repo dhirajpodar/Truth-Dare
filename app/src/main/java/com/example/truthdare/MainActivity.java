@@ -1,7 +1,9 @@
 package com.example.truthdare;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -67,19 +69,9 @@ public class MainActivity extends AppCompatActivity {
         mInterstitialAd.loadAd(new AdRequest.Builder()
                 .addTestDevice("020DEE8F058B3357CB94A23BCF82F8DF")
                 .build());
-        mInterstitialAd.setAdListener(new AdListener(){
-            @Override
-            public void onAdClosed() {
-                mInterstitialAd.loadAd(new AdRequest.Builder().build());
-            }
-        });
-
     }
 
     private void loadBanner() {
-        adView = new AdView(this);
-        adView.setAdSize(AdSize.BANNER);
-        adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
         AdRequest adRequest = new AdRequest.Builder()
                 .build();
         adView.loadAd(adRequest);
@@ -165,12 +157,6 @@ public class MainActivity extends AppCompatActivity {
         optionsCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(mInterstitialAd.isLoaded()){
-                    mInterstitialAd.show();
-                }
-                else {
-                    Log.d("TAG","The intertitial was not loaded yet.");
-                }
                 rlOptions.setVisibility(View.GONE);
                 ivBottle.setEnabled(true);
             }
@@ -202,6 +188,7 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     Log.d("TAG","The intertitial was not loaded yet.");
                 }
+                loadIntertitial();
                 rlQuestions.setVisibility(View.GONE);
                 ivBottle.setVisibility(View.VISIBLE);
                 ivBottle.setEnabled(true);
@@ -217,5 +204,42 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        showExitDialog();
+    }
 
+    private void showExitDialog() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        alertDialog.setMessage("Are you sure you want to exit?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if(mInterstitialAd.isLoaded()){
+                            mInterstitialAd.show();
+                        }
+                        else {
+                            Log.d("TAG","The intertitial was not loaded yet.");
+                        }
+                        mInterstitialAd.setAdListener(new AdListener(){
+                            @Override
+                            public void onAdClosed() {
+                                super.onAdClosed();
+                                finish();
+                            }
+                        });
+                        dialog.dismiss();
+                        MainActivity.super.onBackPressed();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .setCancelable(false)
+                .create();
+        alertDialog.show();
+    }
 }
