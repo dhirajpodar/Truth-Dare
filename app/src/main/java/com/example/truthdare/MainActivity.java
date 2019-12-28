@@ -59,15 +59,14 @@ public class MainActivity extends AppCompatActivity {
         startSplash();
         initApp();
 
-        MobileAds.initialize(this,"ca-app-pub-3940256099942544~3347511713");
+        MobileAds.initialize(this,"ca-app-pub-5519005217801757~8970156166");
         loadBanner();
         loadIntertitial();
     }
     private void loadIntertitial() {
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-5519005217801757/6124500978");
         mInterstitialAd.loadAd(new AdRequest.Builder()
-                .addTestDevice("020DEE8F058B3357CB94A23BCF82F8DF")
                 .build());
     }
 
